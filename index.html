@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Car Rentals | Drive in Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark), #0f172a);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(to right, white, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            background: #f97316;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            text-align: left;
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Fleet Section */
+        .fleet-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .car-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .car-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .car-card:hover .car-image img {
+            transform: scale(1.1);
+        }
+        
+        .car-details {
+            padding: 1.5rem;
+        }
+        
+        .car-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .car-specs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .car-spec {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .car-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .car-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #64748b;
+        }
+        
+        .rent-btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .rent-btn:hover {
+            background: var(--secondary);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Premium Car Rentals</h1>
+            <p class="tagline">Experience the freedom of the open road with our luxury fleet. Book your dream car today.</p>
+            <a href="#fleet" class="cta-button">Explore Our Fleet</a>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Drive<span>Lux</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#fleet">Fleet</a>
+                <a href="#contact">Contact</a>
+                <a href="#"><i class="fas fa-user"></i> Login</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="about">
+            <h2>About DriveLux</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 2015, DriveLux has grown to become the premier luxury car rental service in the country. We pride ourselves on offering an exceptional selection of high-end vehicles combined with unparalleled customer service.</p>
+                    <p>Our mission is to provide discerning clients with access to the world's finest automobiles, whether for business, leisure, or special occasions. With locations in all major cities and 24/7 support, we're always here to enhance your driving experience.</p>
+                    <p>All our vehicles undergo rigorous maintenance and detailing before each rental, ensuring you receive a car in showroom condition every time.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury car showroom">
+                </div>
+            </div>
+        </section>
+        
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>We offer a comprehensive range of services tailored to meet all your automotive needs.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Short-Term Rentals</h3>
+                    <p>Perfect for weekend getaways or business trips. Rent from 1 day to 4 weeks with flexible pickup and drop-off options.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Long-Term Leasing</h3>
+                    <p>Enjoy the benefits of a new car without the commitment of ownership. Leases available from 3 months to 2 years.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Airport Services</h3>
+                    <p>Convenient airport pickup and drop-off with our meet-and-greet service. We'll have your car waiting when you land.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Corporate Programs</h3>
+                    <p>Customized solutions for businesses with discounted rates, dedicated account managers, and detailed reporting.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Vacation Packages</h3>
+                    <p>Combine your rental with hotel stays and activities for the ultimate travel experience at exclusive rates.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>VIP Concierge</h3>
+                    <p>Our premium service includes personal drivers, vehicle delivery to your location, and 24/7 dedicated support.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="fleet">
+            <h2>Our Luxury Fleet</h2>
+            <p>Choose from our curated selection of premium vehicles from the world's most prestigious manufacturers.</p>
+            
+            <div class="fleet-filter">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Sedans</button>
+                <button class="filter-btn">SUVs</button>
+                <button class="filter-btn">Sports</button>
+                <button class="filter-btn">Luxury</button>
+                <button class="filter-btn">Electric</button>
+            </div>
+            
+            <div class="cars-grid">
+                <!-- Car 1 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW 5 Series">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">BMW 5 Series</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 250hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$129<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 2 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercedes GLE">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Mercedes GLE</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 362hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$189<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 3 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Porsche 911">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Porsche 911</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 443hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 4 seats</span>
+                        </div>
+                        <div class="car-price">$349<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 4 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Audi A6">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Audi A6</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 248hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$139<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 5 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Land Rover Range Rover">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Range Rover</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 395hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$259<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 6 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tesla Model S">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Tesla Model S</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-bolt"></i> Electric</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$199<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 7 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercedes S-Class">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Mercedes S-Class</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 429hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$299<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 8 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Porsche Taycan">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Porsche Taycan</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-bolt"></i> Electric</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 4 seats</span>
+                        </div>
+                        <div class="car-price">$379<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 9 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Audi Q7">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Audi Q7</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 335hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 7 seats</span>
+                        </div>
+                        <div class="car-price">$219<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 10 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW X5">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">BMW X5</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 335hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$229<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 11 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jaguar F-Type">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Jaguar F-Type</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 444hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 2 seats</span>
+                        </div>
+                        <div class="car-price">$329<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 12 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1617531653332-bd46c8f8bbd4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lexus LS">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Lexus LS</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 416hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$249<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 13 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba53b0998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maserati Ghibli">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Maserati Ghibli</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 424hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$349<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 14 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW 7 Series">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">BMW 7 Series</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 523hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$279<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</
