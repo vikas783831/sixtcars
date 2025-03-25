@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Car Rentals | Drive in Style</title>
+    <title>SixtCars | Premium Car Rentals</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #1e40af;
+            --primary: #0066cc; /* Sixt blue */
+            --secondary: #003366;
             --dark: #1e293b;
             --light: #f8fafc;
-            --accent: #f59e0b;
+            --accent: #ffcc00; /* Sixt yellow */
         }
         
         * {
@@ -29,7 +29,7 @@
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--dark), #0f172a);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 5rem 2rem;
             text-align: center;
@@ -78,25 +78,25 @@
         .cta-button {
             display: inline-block;
             background: var(--accent);
-            color: var(--dark);
+            color: var(--secondary);
             padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-            background: #f97316;
+            box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+            background: #ffd700;
         }
         
         /* Navigation */
         nav {
-            background: rgba(30, 41, 59, 0.95);
+            background: rgba(0, 51, 102, 0.95);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -114,7 +114,7 @@
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
@@ -451,7 +451,7 @@
         
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--secondary);
             color: white;
             padding: 4rem 0 2rem;
         }
@@ -521,6 +521,7 @@
         .social-links a:hover {
             background: var(--accent);
             transform: translateY(-3px);
+            color: var(--secondary);
         }
         
         .copyright {
@@ -578,15 +579,15 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>Premium Car Rentals</h1>
-            <p class="tagline">Experience the freedom of the open road with our luxury fleet. Book your dream car today.</p>
+            <h1>SixtCars</h1>
+            <p class="tagline">Experience the freedom of the open road with our premium fleet. Book your dream car today.</p>
             <a href="#fleet" class="cta-button">Explore Our Fleet</a>
         </div>
     </header>
     
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Drive<span>Lux</span></a>
+            <a href="#" class="logo">Sixt<span>Cars</span></a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
@@ -599,30 +600,30 @@
     
     <main>
         <section id="about">
-            <h2>About DriveLux</h2>
+            <h2>About SixtCars</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Founded in 2015, DriveLux has grown to become the premier luxury car rental service in the country. We pride ourselves on offering an exceptional selection of high-end vehicles combined with unparalleled customer service.</p>
-                    <p>Our mission is to provide discerning clients with access to the world's finest automobiles, whether for business, leisure, or special occasions. With locations in all major cities and 24/7 support, we're always here to enhance your driving experience.</p>
-                    <p>All our vehicles undergo rigorous maintenance and detailing before each rental, ensuring you receive a car in showroom condition every time.</p>
+                    <p>SixtCars is a global leader in premium car rental services, with over 100 years of experience in the mobility industry. We pride ourselves on offering an exceptional selection of vehicles combined with world-class customer service.</p>
+                    <p>Our mission is to provide clients with access to the finest automobiles, whether for business, leisure, or special occasions. With locations in all major cities worldwide and 24/7 support, we're committed to delivering an unparalleled rental experience.</p>
+                    <p>Every vehicle in our fleet undergoes rigorous maintenance and detailing before each rental, ensuring you receive a car in perfect condition every time.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury car showroom">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="SixtCars showroom">
                 </div>
             </div>
         </section>
         
         <section id="services">
             <h2>Our Services</h2>
-            <p>We offer a comprehensive range of services tailored to meet all your automotive needs.</p>
+            <p>We offer a comprehensive range of premium mobility services tailored to meet all your transportation needs.</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-car"></i>
                     </div>
-                    <h3>Short-Term Rentals</h3>
-                    <p>Perfect for weekend getaways or business trips. Rent from 1 day to 4 weeks with flexible pickup and drop-off options.</p>
+                    <h3>Premium Rentals</h3>
+                    <p>Choose from our exclusive collection of luxury vehicles for short-term rentals from 1 day to 4 weeks.</p>
                 </div>
                 
                 <div class="service-card">
@@ -630,7 +631,7 @@
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3>Long-Term Leasing</h3>
-                    <p>Enjoy the benefits of a new car without the commitment of ownership. Leases available from 3 months to 2 years.</p>
+                    <p>Flexible long-term leasing options from 3 months to 2 years with full maintenance packages included.</p>
                 </div>
                 
                 <div class="service-card">
@@ -638,15 +639,15 @@
                         <i class="fas fa-plane"></i>
                     </div>
                     <h3>Airport Services</h3>
-                    <p>Convenient airport pickup and drop-off with our meet-and-greet service. We'll have your car waiting when you land.</p>
+                    <p>Premium meet-and-greet service at all major airports worldwide for seamless arrivals and departures.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>Corporate Programs</h3>
-                    <p>Customized solutions for businesses with discounted rates, dedicated account managers, and detailed reporting.</p>
+                    <h3>Corporate Solutions</h3>
+                    <p>Tailored mobility programs for businesses with centralized billing, reporting, and dedicated account managers.</p>
                 </div>
                 
                 <div class="service-card">
@@ -654,7 +655,7 @@
                         <i class="fas fa-umbrella-beach"></i>
                     </div>
                     <h3>Vacation Packages</h3>
-                    <p>Combine your rental with hotel stays and activities for the ultimate travel experience at exclusive rates.</p>
+                    <p>Exclusive travel packages combining premium rentals with luxury accommodations and experiences.</p>
                 </div>
                 
                 <div class="service-card">
@@ -662,14 +663,14 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>VIP Concierge</h3>
-                    <p>Our premium service includes personal drivers, vehicle delivery to your location, and 24/7 dedicated support.</p>
+                    <p>Our premium service includes personal drivers, vehicle delivery, and 24/7 dedicated support.</p>
                 </div>
             </div>
         </section>
         
         <section id="fleet">
-            <h2>Our Luxury Fleet</h2>
-            <p>Choose from our curated selection of premium vehicles from the world's most prestigious manufacturers.</p>
+            <h2>Our Premium Fleet</h2>
+            <p>Choose from our exclusive collection of premium vehicles from the world's most prestigious manufacturers.</p>
             
             <div class="fleet-filter">
                 <button class="filter-btn active">All</button>
@@ -681,15 +682,15 @@
             </div>
             
             <div class="cars-grid">
-                <!-- Car 1 -->
+                <!-- Car 1 - BMW 5 Series -->
                 <div class="car-card">
                     <div class="car-image">
-                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW 5 Series">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW 5 Series">
                     </div>
                     <div class="car-details">
                         <h3 class="car-title">BMW 5 Series</h3>
                         <div class="car-specs">
-                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 250hp</span>
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 248hp</span>
                             <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
                             <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
                         </div>
@@ -698,10 +699,10 @@
                     </div>
                 </div>
                 
-                <!-- Car 2 -->
+                <!-- Car 2 - Mercedes GLE -->
                 <div class="car-card">
                     <div class="car-image">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercedes GLE">
+                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercedes GLE">
                     </div>
                     <div class="car-details">
                         <h3 class="car-title">Mercedes GLE</h3>
@@ -715,10 +716,10 @@
                     </div>
                 </div>
                 
-                <!-- Car 3 -->
+                <!-- Car 3 - Porsche 911 -->
                 <div class="car-card">
                     <div class="car-image">
-                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Porsche 911">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Porsche 911">
                     </div>
                     <div class="car-details">
                         <h3 class="car-title">Porsche 911</h3>
@@ -732,7 +733,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 4 -->
+                <!-- Car 4 - Audi A6 -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Audi A6">
@@ -749,7 +750,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 5 -->
+                <!-- Car 5 - Range Rover -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Land Rover Range Rover">
@@ -766,7 +767,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 6 -->
+                <!-- Car 6 - Tesla Model S -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tesla Model S">
@@ -783,7 +784,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 7 -->
+                <!-- Car 7 - Mercedes S-Class -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercedes S-Class">
@@ -800,7 +801,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 8 -->
+                <!-- Car 8 - Porsche Taycan -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Porsche Taycan">
@@ -817,7 +818,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 9 -->
+                <!-- Car 9 - Audi Q7 -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Audi Q7">
@@ -834,7 +835,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 10 -->
+                <!-- Car 10 - BMW X5 -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW X5">
@@ -851,7 +852,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 11 -->
+                <!-- Car 11 - Jaguar F-Type -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jaguar F-Type">
@@ -868,7 +869,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 12 -->
+                <!-- Car 12 - Lexus LS -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1617531653332-bd46c8f8bbd4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lexus LS">
@@ -885,7 +886,7 @@
                     </div>
                 </div>
                 
-                <!-- Car 13 -->
+                <!-- Car 13 - Maserati Ghibli -->
                 <div class="car-card">
                     <div class="car-image">
                         <img src="https://images.unsplash.com/photo-1593941707882-a5bba53b0998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maserati Ghibli">
@@ -902,10 +903,10 @@
                     </div>
                 </div>
                 
-                <!-- Car 14 -->
+                <!-- Car 14 - BMW 7 Series -->
                 <div class="car-card">
                     <div class="car-image">
-                        <img src="https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW 7 Series">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW 7 Series">
                     </div>
                     <div class="car-details">
                         <h3 class="car-title">BMW 7 Series</h3>
@@ -915,4 +916,256 @@
                             <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
                         </div>
                         <div class="car-price">$279<span>/day</span></div>
-                        <button class="rent-btn">Rent Now</
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 15 - Audi A8 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Audi A8">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Audi A8</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 453hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$289<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 16 - Land Rover Defender -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1621330396165-cafbc0b3ea1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Land Rover Defender">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Land Rover Defender</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 395hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 7 seats</span>
+                        </div>
+                        <div class="car-price">$239<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 17 - Tesla Model X -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tesla Model X">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Tesla Model X</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-bolt"></i> Electric</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 7 seats</span>
+                        </div>
+                        <div class="car-price">$229<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 18 - Mercedes EQS -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercedes EQS">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Mercedes EQS</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-bolt"></i> Electric</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$299<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 19 - Porsche Panamera -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Porsche Panamera">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Porsche Panamera</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-tachometer-alt"></i> 473hp</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 4 seats</span>
+                        </div>
+                        <div class="car-price">$359<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+                
+                <!-- Car 20 - Audi e-tron -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Audi e-tron">
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-title">Audi e-tron</h3>
+                        <div class="car-specs">
+                            <span class="car-spec"><i class="fas fa-bolt"></i> Electric</span>
+                            <span class="car-spec"><i class="fas fa-cogs"></i> Auto</span>
+                            <span class="car-spec"><i class="fas fa-users"></i> 5 seats</span>
+                        </div>
+                        <div class="car-price">$219<span>/day</span></div>
+                        <button class="rent-btn">Rent Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or ready to book your premium rental? Get in touch with our team.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Information</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Headquarters</h4>
+                            <p>SixtCars Plaza, 123 Premium Drive<br>Miami, FL 33101, USA</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (800) 555-SIXT<br>+1 (305) 555-0199</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@sixtcars.com<br>reservations@sixtcars.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>24/7 Customer Support<br>Branch Hours: 8AM - 8PM Daily</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="reservation">Reservation Inquiry</option>
+                                <option value="fleet">Fleet Information</option>
+                                <option value="corporate">Corporate Services</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Enter your message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>SixtCars</h3>
+                <p>Premium car rental services worldwide. Experience luxury mobility with our exclusive fleet and exceptional service.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#fleet">Vehicle Fleet</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Premium Rentals</a></li>
+                    <li><a href="#">Long-Term Leasing</a></li>
+                    <li><a href="#">Airport Services</a></li>
+                    <li><a href="#">Corporate Solutions</a></li>
+                    <li><a href="#">VIP Concierge</a></li>
+                    <li><a href="#">Chauffeur Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for exclusive offers and updates.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your email address" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 SixtCars. All rights reserved. SixtCars and the SixtCars logo are registered trademarks.</p>
+        </div>
+    </footer>
+</body>
+</html>
